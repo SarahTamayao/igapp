@@ -11,7 +11,7 @@
         <!--Login View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="LoginViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginViewController" id="BYZ-38-t0r" customClass="LoginViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -65,7 +65,7 @@
             </objects>
             <point key="canvasLocation" x="-500" y="21"/>
         </scene>
-        <!--Feed View Controller-->
+        <!--Home Feed-->
         <scene sceneID="9YS-sn-Kqb">
             <objects>
                 <viewController id="jKv-Vp-u5Y" customClass="FeedViewController" sceneMemberID="viewController">
@@ -75,16 +75,73 @@
                         <viewLayoutGuide key="safeArea" id="vhd-Kz-2oK"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" id="WNT-mV-ShT"/>
+                    <navigationItem key="navigationItem" title="Home Feed" id="WNT-mV-ShT">
+                        <barButtonItem key="leftBarButtonItem" title="Logout" id="bl6-Au-VH9">
+                            <connections>
+                                <action selector="logoutAction:" destination="jKv-Vp-u5Y" id="tFZ-ZR-gzW"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" image="insta_camera_btn" id="N5z-hY-H2n">
+                            <connections>
+                                <action selector="composeAction:" destination="jKv-Vp-u5Y" id="5PQ-RV-Xbz"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <segue destination="jwI-JT-icA" kind="presentation" identifier="composeSegue" id="VHM-3q-INf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YIR-Nq-paW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1128" y="45"/>
         </scene>
+        <!--Compose View Controller-->
+        <scene sceneID="kN6-dV-067">
+            <objects>
+                <viewController id="TmF-5f-nlu" customClass="ComposeViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Xvb-qa-a36">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iYv-8l-2Ck">
+                                <rect key="frame" x="0.0" y="56" width="166" height="176"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Caption" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Gvs-Lc-Bxz">
+                                <rect key="frame" x="174" y="68" width="210" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="ZCG-iX-DuH"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="as5-bB-bgB">
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="Qil-5S-p3k">
+                            <connections>
+                                <action selector="cancelAction:" destination="TmF-5f-nlu" id="Suq-RB-c9B"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Share" id="soB-32-c82">
+                            <connections>
+                                <action selector="shareAction:" destination="TmF-5f-nlu" id="R1f-qL-3Tj"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="captionText" destination="Gvs-Lc-Bxz" id="rfT-TR-yK3"/>
+                        <outlet property="postImage" destination="iYv-8l-2Ck" id="yzZ-Ay-UUW"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oER-pN-ZWP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2744.9275362318845" y="72.991071428571431"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="2UV-7u-8Om">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="huK-mq-Ee2" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="FeedNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="huK-mq-Ee2" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="2ye-Do-uuI">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
@@ -99,8 +156,27 @@
             </objects>
             <point key="canvasLocation" x="245" y="21"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="kSP-fL-Izz">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="jwI-JT-icA" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="UVy-Vn-1nL">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="TmF-5f-nlu" kind="relationship" relationship="rootViewController" id="I1b-lF-43X"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3pB-f2-Q5c" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1834.7826086956522" y="72.991071428571431"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="insta_camera_btn" width="25" height="25"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

@@ -20,6 +20,8 @@
 		AA2E85C72694E79E00EE0581 /* instagramappUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = AA2E85C62694E79E00EE0581 /* instagramappUITests.m */; };
 		AA2E85D72694F0F200EE0581 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA2E85D62694F0F200EE0581 /* LoginViewController.m */; };
 		AA2E85DA2694F48200EE0581 /* FeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA2E85D92694F48200EE0581 /* FeedViewController.m */; };
+		AA2E85DD2694FFB200EE0581 /* ComposeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA2E85DC2694FFB200EE0581 /* ComposeViewController.m */; };
+		AA2E85E12695077500EE0581 /* Post.m in Sources */ = {isa = PBXBuildFile; fileRef = AA2E85E02695077500EE0581 /* Post.m */; };
 		B8418D8F6EDD2889956551DB /* Pods_instagramapp_instagramappUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3F6628F4DA0330674938BCA /* Pods_instagramapp_instagramappUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -68,6 +70,10 @@
 		AA2E85D62694F0F200EE0581 /* LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		AA2E85D82694F48200EE0581 /* FeedViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FeedViewController.h; sourceTree = "<group>"; };
 		AA2E85D92694F48200EE0581 /* FeedViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FeedViewController.m; sourceTree = "<group>"; };
+		AA2E85DB2694FFB200EE0581 /* ComposeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ComposeViewController.h; sourceTree = "<group>"; };
+		AA2E85DC2694FFB200EE0581 /* ComposeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ComposeViewController.m; sourceTree = "<group>"; };
+		AA2E85DF2695077500EE0581 /* Post.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Post.h; sourceTree = "<group>"; };
+		AA2E85E02695077500EE0581 /* Post.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Post.m; sourceTree = "<group>"; };
 		B3F6628F4DA0330674938BCA /* Pods_instagramapp_instagramappUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_instagramapp_instagramappUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5430FB9552AE27C3660DB69 /* Pods-instagramapp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-instagramapp.debug.xcconfig"; path = "Target Support Files/Pods-instagramapp/Pods-instagramapp.debug.xcconfig"; sourceTree = "<group>"; };
 		C45BEE7B814DB3B40AC9BFC6 /* Pods-instagramappTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-instagramappTests.debug.xcconfig"; path = "Target Support Files/Pods-instagramappTests/Pods-instagramappTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -150,6 +156,7 @@
 		AA2E859E2694E79D00EE0581 /* instagramapp */ = {
 			isa = PBXGroup;
 			children = (
+				AA2E85DE2695070000EE0581 /* Models */,
 				AA2E85D42694F0DD00EE0581 /* ViewControllers */,
 				AA2E859F2694E79D00EE0581 /* AppDelegate.h */,
 				AA2E85A02694E79D00EE0581 /* AppDelegate.m */,
@@ -191,8 +198,19 @@
 				AA2E85D62694F0F200EE0581 /* LoginViewController.m */,
 				AA2E85D82694F48200EE0581 /* FeedViewController.h */,
 				AA2E85D92694F48200EE0581 /* FeedViewController.m */,
+				AA2E85DB2694FFB200EE0581 /* ComposeViewController.h */,
+				AA2E85DC2694FFB200EE0581 /* ComposeViewController.m */,
 			);
 			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		AA2E85DE2695070000EE0581 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				AA2E85DF2695077500EE0581 /* Post.h */,
+				AA2E85E02695077500EE0581 /* Post.m */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -436,8 +454,10 @@
 				AA2E85A12694E79D00EE0581 /* AppDelegate.m in Sources */,
 				AA2E85B22694E79E00EE0581 /* main.m in Sources */,
 				AA2E85A42694E79D00EE0581 /* SceneDelegate.m in Sources */,
+				AA2E85DD2694FFB200EE0581 /* ComposeViewController.m in Sources */,
 				AA2E85DA2694F48200EE0581 /* FeedViewController.m in Sources */,
 				AA2E85D72694F0F200EE0581 /* LoginViewController.m in Sources */,
+				AA2E85E12695077500EE0581 /* Post.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
