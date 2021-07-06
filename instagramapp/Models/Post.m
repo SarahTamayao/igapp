@@ -6,6 +6,7 @@
 //
 
 #import "Post.h"
+#import <Parse/Parse.h>
 
 
 @implementation Post
@@ -37,6 +38,8 @@
     newPost.createdAt = [NSDate date];
     
     [newPost saveInBackgroundWithBlock: completion];
+    
+  
 }
 
 + (PFFileObject *)getPFFileFromImage: (UIImage * _Nullable)image {

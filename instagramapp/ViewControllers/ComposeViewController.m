@@ -67,7 +67,7 @@
             [self dismissViewControllerAnimated:true completion:nil];
         }
         else{
-            NSLog(@"Sad not post");
+            NSLog(@"%@",error);
         }
     }];
 }
