@@ -16,13 +16,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="launch" translatesAutoresizingMaskIntoConstraints="NO" id="p23-zR-qsU">
-                                <rect key="frame" x="114" y="355" width="187" height="187"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="launch" translatesAutoresizingMaskIntoConstraints="NO" id="p23-zR-qsU">
+                                <rect key="frame" x="157" y="398" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="9Tf-CK-kR9"/>
+                                    <constraint firstAttribute="width" constant="100" id="uM9-HG-K20"/>
+                                </constraints>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="p23-zR-qsU" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="65G-pP-X12"/>
+                            <constraint firstItem="p23-zR-qsU" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="WrU-9j-4Uf"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>

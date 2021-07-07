@@ -58,7 +58,7 @@
                     <connections>
                         <outlet property="password" destination="sDx-rU-QS2" id="l7G-A8-469"/>
                         <outlet property="username" destination="7QV-It-WvX" id="MCc-Kr-zTK"/>
-                        <segue destination="huK-mq-Ee2" kind="presentation" identifier="loginSegue" id="MVE-9F-BP2"/>
+                        <segue destination="huK-mq-Ee2" kind="show" identifier="loginSegue" id="MVE-9F-BP2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -275,6 +275,7 @@
             <objects>
                 <navigationController storyboardIdentifier="FeedNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="huK-mq-Ee2" sceneMemberID="viewController">
                     <toolbarItems/>
+                    <navigationItem key="navigationItem" id="bTJ-u1-Uuz"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="2ye-Do-uuI">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
                         <autoresizingMask key="autoresizingMask"/>

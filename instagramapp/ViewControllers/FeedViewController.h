@@ -6,10 +6,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "InfiniteScrollActivityView.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface FeedViewController : UIViewController
+@property (assign, nonatomic) BOOL isMoreDataLoading;
+@property (nonatomic,strong) InfiniteScrollActivityView* loadingMoreView;
 
 @end
 
