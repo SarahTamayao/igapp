@@ -85,20 +85,19 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4kH-fg-EyZ" customClass="PFImageView">
-                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="300"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="414"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="300" id="Fan-cr-OMu"/>
-                                                        <constraint firstAttribute="height" constant="300" id="dTP-Q6-484"/>
+                                                        <constraint firstAttribute="height" constant="414" id="d0b-wx-R2X"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bko-7b-LZb">
-                                                    <rect key="frame" x="10" y="310" width="394" height="21"/>
+                                                    <rect key="frame" x="10" y="424" width="394" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Caption" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gnd-PP-Lts">
-                                                    <rect key="frame" x="10" y="341" width="394" height="21"/>
+                                                    <rect key="frame" x="10" y="455" width="394" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -121,6 +120,7 @@
                                             <outlet property="postCaption" destination="gnd-PP-Lts" id="gve-gz-BRc"/>
                                             <outlet property="postImageViw" destination="4kH-fg-EyZ" id="e1g-mj-vnM"/>
                                             <outlet property="postUsername" destination="bko-7b-LZb" id="6ye-Be-r2Y"/>
+                                            <segue destination="uhJ-ju-HmO" kind="show" id="LV8-Q6-doo"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -155,6 +155,55 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YIR-Nq-paW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1127.536231884058" y="44.866071428571423"/>
+        </scene>
+        <!--Details View Controller-->
+        <scene sceneID="RbZ-E1-oHU">
+            <objects>
+                <viewController id="uhJ-ju-HmO" customClass="DetailsViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="jKO-9x-j6E">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fsT-La-2l9" customClass="PFImageView">
+                                <rect key="frame" x="20" y="77" width="374" height="334"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Caption" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="23y-6Z-I6A">
+                                <rect key="frame" x="41" y="467" width="60" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZEy-13-fos">
+                                <rect key="frame" x="41" y="438" width="79" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Time Stamp" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GQm-rv-iYp">
+                                <rect key="frame" x="41" y="518" width="92" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="pnL-dh-IbS"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="5mP-Qh-cYi"/>
+                    <connections>
+                        <outlet property="caption" destination="23y-6Z-I6A" id="8wG-Tg-EkR"/>
+                        <outlet property="postView" destination="fsT-La-2l9" id="lvS-TV-l6p"/>
+                        <outlet property="timeStamp" destination="GQm-rv-iYp" id="Zkp-d3-YoN"/>
+                        <outlet property="username" destination="ZEy-13-fos" id="f3w-Rr-Shv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BuZ-WT-Lwp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1131.8840579710145" y="796.875"/>
         </scene>
         <!--Compose View Controller-->
         <scene sceneID="kN6-dV-067">
