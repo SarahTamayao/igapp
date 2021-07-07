@@ -92,11 +92,13 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
-    UITableViewCell *tappedCell = sender;
-    NSIndexPath *indexPath = [self.tableView indexPathForCell:tappedCell];
-    Post *poster = (Post *)self.postArray[indexPath.row];
-    DetailsViewController *detailsViewController = [segue destinationViewController];
-    detailsViewController.post = poster;
+    if ([[segue identifier] isEqualToString:@"detailSegue"]){
+        UITableViewCell *tappedCell = sender;
+        NSIndexPath *indexPath = [self.tableView indexPathForCell:tappedCell];
+        Post *poster = (Post *)self.postArray[indexPath.row];
+        DetailsViewController *detailsViewController = [segue destinationViewController];
+        detailsViewController.post = poster;
+    }
 }
 
 
