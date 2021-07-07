@@ -14,9 +14,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface igCell : UITableViewCell
 //@property (weak, nonatomic) IBOutlet UIImageView *postImage;
-@property (weak, nonatomic) IBOutlet UILabel *postUsername;
 @property (weak, nonatomic) IBOutlet UILabel *postCaption;
 @property (weak, nonatomic) IBOutlet PFImageView *postImageViw;
+@property (weak, nonatomic) IBOutlet UILabel *postTime;
 @property (nonatomic, strong) Post *post;
 
 @end

@@ -41,6 +41,7 @@
     UIEdgeInsets insets = self.tableView.contentInset;
     insets.bottom += InfiniteScrollActivityView.defaultHeight;
     self.tableView.contentInset = insets;
+    [self.tableView registerClass:[UITableViewHeaderFooterView class] forHeaderFooterViewReuseIdentifier:@"postHeader"];
         
     // Do any additional setup after loading the view.
 }
@@ -105,15 +106,43 @@
 - (IBAction)composeAction:(id)sender {
     [self performSegueWithIdentifier:@"composeSegue" sender:nil];
 }
-
-- (NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return self.postArray.count;
+}
+- (NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return 1;
 }
 - (UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     igCell *cell = (igCell *) [tableView dequeueReusableCellWithIdentifier:@"igCell" forIndexPath:indexPath];
-    cell.post = (Post *)self.postArray[indexPath.row];
+    cell.post = (Post *)self.postArray[indexPath.section];
     [cell setPost:cell.post];
     return cell;
+}
+/*- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+    UITableViewHeaderFooterView *header = [tableView dequeueReusableHeaderFooterViewWithIdentifier:@"postHeader"];
+    NSString *headerText = self.postArray[section][@"author"][@"username"];
+    header.textLabel.text = headerText;
+
+    header.textLabel.font = [UIFont boldSystemFontOfSize:18];
+
+    return header;
+}*/
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
+    NSString *headerText = self.postArray[section][@"author"][@"username"];
+    return [headerText lowercaseString];
+}
+- (void)tableView:(UITableView *)tableView willDisplayHeaderView:(UIView *)view forSection:(NSInteger)section {
+    UITableViewHeaderFooterView *header = (UITableViewHeaderFooterView *)view;
+
+    header.textLabel.textColor = [UIColor blackColor];
+    header.textLabel.font = [UIFont boldSystemFontOfSize:18];
+    CGRect headerFrame = header.frame;
+    header.textLabel.frame = headerFrame;
+    header.textLabel.text = [self tableView:tableView titleForHeaderInSection:section];
+    //header.textLabel.textAlignment = NSTextAlignmentCenter;
+}
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    return 30;
 }
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
      // Handle scroll behavior here
