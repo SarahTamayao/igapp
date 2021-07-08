@@ -7,6 +7,7 @@
 
 #import "ComposeViewController.h"
 #import "Post.h"
+#import <MBProgressHUD/MBProgressHUD.h>
 
 @interface ComposeViewController ()  <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 @property (weak, nonatomic) IBOutlet UIImageView *postImage;
@@ -61,12 +62,16 @@
 }
 - (IBAction)shareAction:(id)sender {
     
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    
     [Post postUserImage:[self resizeI:self.orgview withSize:self.orgview.size] withCaption:self.captionText.text withCompletion:^(BOOL succeeded, NSError * _Nullable error) {
         if (succeeded){
             NSLog(@"Yay post success!");
+            [MBProgressHUD hideHUDForView:self.view animated:YES];
             [self dismissViewControllerAnimated:true completion:nil];
         }
         else{
+            [MBProgressHUD hideHUDForView:self.view animated:YES];
             NSLog(@"%@",error);
         }
     }];

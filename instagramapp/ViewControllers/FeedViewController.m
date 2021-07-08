@@ -15,6 +15,7 @@
 #import "DetailsViewController.h"
 #import "CustomTapRecognizer.h"
 #import "ProfileViewController.h"
+#import "ComposeViewController.h"
 
 @interface FeedViewController () <UITableViewDataSource, UITableViewDelegate, UIScrollViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
