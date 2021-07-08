@@ -13,6 +13,8 @@
 #import "Post.h"
 #import "igCell.h"
 #import "DetailsViewController.h"
+#import "CustomTapRecognizer.h"
+#import "ProfileViewController.h"
 
 @interface FeedViewController () <UITableViewDataSource, UITableViewDelegate, UIScrollViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -122,57 +124,66 @@
     NSString *headerText = self.postArray[section][@"author"][@"username"];
     return [headerText lowercaseString];
 }
+- (void)handleTap:(UITapGestureRecognizer *)sender {
+    CustomTapRecognizer *tap = (CustomTapRecognizer *)sender;
+    [self performSegueWithIdentifier:@"postToProfSegue" sender:tap.author];
+}
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     UIView *headerView = [[UIView alloc] init];
+    //UIButton *imgButton = [[UIButton alloc] init];
     UIImage *myImage = [UIImage imageNamed:@"image_placeholder.png"];
+    //[imgButton setImage:myImage forState:UIControlStateNormal];
     
     UIImageView *imageView = [[UIImageView alloc] initWithImage:myImage];
     
     PFFileObject *userImageFile = self.postArray[section][@"author"][@"profilePic"];
     [userImageFile getDataInBackgroundWithBlock:^(NSData *imageData, NSError *error) {
         if (!error) {
+            //[imgButton setImage:[UIImage imageWithData:imageData] forState:UIControlStateNormal];
             imageView.image = [UIImage imageWithData:imageData];
         }
     }];
     
     UILabel *myLabel = [[UILabel alloc] init];
+    //UIButton *labelButton = [[UIButton alloc] init];
+    /*[labelButton.titleLabel setFont:[UIFont boldSystemFontOfSize:18]];
+    [labelButton.titleLabel setText:[self tableView:tableView titleForHeaderInSection:section]];
+    [labelButton.titleLabel setTextColor:[UIColor blackColor]];*/
     [headerView addSubview:myLabel];
     [headerView addSubview:imageView];
     imageView.translatesAutoresizingMaskIntoConstraints = false;
-    
     myLabel.translatesAutoresizingMaskIntoConstraints = false;
     
-    //imageView.frame = CGRectMake(10,10,100,100);
+    /*labelButton.titleLabel.text =[self tableView:tableView titleForHeaderInSection:section];
+    labelButton.titleLabel.font =[UIFont boldSystemFontOfSize:18];
+    labelButton.titleLabel.textColor = [UIColor blackColor];*/
+    
+    
     [imageView.widthAnchor constraintEqualToConstant:25].active = YES;
     [imageView.heightAnchor constraintEqualToConstant:25].active = YES;
     [imageView.leadingAnchor constraintEqualToAnchor:headerView.leadingAnchor constant:10].active = YES;
-    //[imageView.topAnchor constraintEqualToAnchor:headerView.topAnchor constant:8].active = YES;
     [imageView.bottomAnchor constraintEqualToAnchor:headerView.bottomAnchor constant:-8].active = YES;
     
     [myLabel.leadingAnchor constraintEqualToAnchor:imageView.trailingAnchor constant:10].active = YES;
-    //[myLabel.topAnchor constraintEqualToAnchor:headerView.topAnchor constant:8].active = YES;
     [myLabel.trailingAnchor constraintEqualToAnchor:headerView.trailingAnchor constant:-8].active = YES;
     [myLabel.bottomAnchor constraintEqualToAnchor:headerView.bottomAnchor constant:-8].active = YES;
     imageView.layer.cornerRadius = 25/2;
     imageView.layer.masksToBounds = YES;
     
-    //myLabel.frame = CGRectMake(150, 10, 320, 20);
+    //[labelButton setTitle:[self tableView:tableView titleForHeaderInSection:section] forState:UIControlStateNormal];
+    
     myLabel.font = [UIFont boldSystemFontOfSize:18];
     myLabel.text = [self tableView:tableView titleForHeaderInSection:section];
-
+    
+    CustomTapRecognizer *recognizer = [[CustomTapRecognizer alloc] initWithTarget:self action:@selector(handleTap:)];
+    recognizer.author =self.postArray[section][@"author"];
+    [headerView addGestureRecognizer:recognizer];
+    [headerView setUserInteractionEnabled:YES];
+    
     
     return headerView;
 }
-/*- (void)tableView:(UITableView *)tableView willDisplayHeaderView:(UIView *)view forSection:(NSInteger)section {
-    UITableViewHeaderFooterView *header = (UITableViewHeaderFooterView *)view;
 
-    header.textLabel.textColor = [UIColor blackColor];
-    header.textLabel.font = [UIFont boldSystemFontOfSize:18];
-    CGRect headerFrame = header.frame;
-    header.textLabel.frame = headerFrame;
-    header.textLabel.text = [self tableView:tableView titleForHeaderInSection:section];
-    //header.textLabel.textAlignment = NSTextAlignmentCenter;
-}*/
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
     return 30;
 }
@@ -207,6 +218,11 @@
         Post *poster = (Post *)self.postArray[indexPath.section];
         DetailsViewController *detailsViewController = [segue destinationViewController];
         detailsViewController.post = poster;
+    }
+    else if([[segue identifier] isEqualToString:@"postToProfSegue"]){
+        PFUser *ar = sender;
+        ProfileViewController *profileViewController = [segue destinationViewController];
+        profileViewController.author = ar;
     }
 }
 

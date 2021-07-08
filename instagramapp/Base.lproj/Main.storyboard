@@ -158,6 +158,7 @@
                     <connections>
                         <outlet property="tableView" destination="Uvc-uk-jrj" id="CGU-JH-8Ks"/>
                         <segue destination="jwI-JT-icA" kind="presentation" identifier="composeSegue" id="VHM-3q-INf"/>
+                        <segue destination="Nxy-7a-ldf" kind="show" identifier="postToProfSegue" id="TXx-FO-5TO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YIR-Nq-paW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -179,7 +180,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="l0m-QS-5ju">
-                                <rect key="frame" x="0.0" y="207" width="414" height="635"/>
+                                <rect key="frame" x="0.0" y="206.5" width="414" height="635.5"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="ZF4-hj-9XB">
                                     <size key="itemSize" width="140" height="140"/>
@@ -435,7 +436,8 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="XEb-uT-xIc"/>
+        <segue reference="LV8-Q6-doo"/>
+        <segue reference="TXx-FO-5TO"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="feed_tab" width="25" height="25"/>
