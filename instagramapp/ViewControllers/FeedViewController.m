@@ -122,7 +122,48 @@
     NSString *headerText = self.postArray[section][@"author"][@"username"];
     return [headerText lowercaseString];
 }
-- (void)tableView:(UITableView *)tableView willDisplayHeaderView:(UIView *)view forSection:(NSInteger)section {
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+    UIView *headerView = [[UIView alloc] init];
+    UIImage *myImage = [UIImage imageNamed:@"image_placeholder.png"];
+    
+    UIImageView *imageView = [[UIImageView alloc] initWithImage:myImage];
+    
+    PFFileObject *userImageFile = self.postArray[section][@"author"][@"profilePic"];
+    [userImageFile getDataInBackgroundWithBlock:^(NSData *imageData, NSError *error) {
+        if (!error) {
+            imageView.image = [UIImage imageWithData:imageData];
+        }
+    }];
+    
+    UILabel *myLabel = [[UILabel alloc] init];
+    [headerView addSubview:myLabel];
+    [headerView addSubview:imageView];
+    imageView.translatesAutoresizingMaskIntoConstraints = false;
+    
+    myLabel.translatesAutoresizingMaskIntoConstraints = false;
+    
+    //imageView.frame = CGRectMake(10,10,100,100);
+    [imageView.widthAnchor constraintEqualToConstant:25].active = YES;
+    [imageView.heightAnchor constraintEqualToConstant:25].active = YES;
+    [imageView.leadingAnchor constraintEqualToAnchor:headerView.leadingAnchor constant:10].active = YES;
+    //[imageView.topAnchor constraintEqualToAnchor:headerView.topAnchor constant:8].active = YES;
+    [imageView.bottomAnchor constraintEqualToAnchor:headerView.bottomAnchor constant:-8].active = YES;
+    
+    [myLabel.leadingAnchor constraintEqualToAnchor:imageView.trailingAnchor constant:10].active = YES;
+    //[myLabel.topAnchor constraintEqualToAnchor:headerView.topAnchor constant:8].active = YES;
+    [myLabel.trailingAnchor constraintEqualToAnchor:headerView.trailingAnchor constant:-8].active = YES;
+    [myLabel.bottomAnchor constraintEqualToAnchor:headerView.bottomAnchor constant:-8].active = YES;
+    imageView.layer.cornerRadius = 25/2;
+    imageView.layer.masksToBounds = YES;
+    
+    //myLabel.frame = CGRectMake(150, 10, 320, 20);
+    myLabel.font = [UIFont boldSystemFontOfSize:18];
+    myLabel.text = [self tableView:tableView titleForHeaderInSection:section];
+
+    
+    return headerView;
+}
+/*- (void)tableView:(UITableView *)tableView willDisplayHeaderView:(UIView *)view forSection:(NSInteger)section {
     UITableViewHeaderFooterView *header = (UITableViewHeaderFooterView *)view;
 
     header.textLabel.textColor = [UIColor blackColor];
@@ -131,7 +172,7 @@
     header.textLabel.frame = headerFrame;
     header.textLabel.text = [self tableView:tableView titleForHeaderInSection:section];
     //header.textLabel.textAlignment = NSTextAlignmentCenter;
-}
+}*/
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
     return 30;
 }
