@@ -118,15 +118,6 @@
     [cell setPost:cell.post];
     return cell;
 }
-/*- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
-    UITableViewHeaderFooterView *header = [tableView dequeueReusableHeaderFooterViewWithIdentifier:@"postHeader"];
-    NSString *headerText = self.postArray[section][@"author"][@"username"];
-    header.textLabel.text = headerText;
-
-    header.textLabel.font = [UIFont boldSystemFontOfSize:18];
-
-    return header;
-}*/
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
     NSString *headerText = self.postArray[section][@"author"][@"username"];
     return [headerText lowercaseString];
@@ -172,7 +163,7 @@
     if ([[segue identifier] isEqualToString:@"detailSegue"]){
         UITableViewCell *tappedCell = sender;
         NSIndexPath *indexPath = [self.tableView indexPathForCell:tappedCell];
-        Post *poster = (Post *)self.postArray[indexPath.row];
+        Post *poster = (Post *)self.postArray[indexPath.section];
         DetailsViewController *detailsViewController = [segue destinationViewController];
         detailsViewController.post = poster;
     }

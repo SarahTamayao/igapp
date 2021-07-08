@@ -8,7 +8,7 @@
 #import "ComposeViewController.h"
 #import "Post.h"
 
-@interface ComposeViewController ()  <UITableViewDelegate, UITableViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
+@interface ComposeViewController ()  <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 @property (weak, nonatomic) IBOutlet UIImageView *postImage;
 @property (weak, nonatomic) IBOutlet UITextField *captionText;
 @property (nonatomic, strong) UIImage *orgview;

@@ -11,6 +11,8 @@
 		72639E98086A60EAC614E211 /* Pods_instagramapp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9590AC874F1A2A96D4E08179 /* Pods_instagramapp.framework */; };
 		AA27529126962FE3003AB368 /* DetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA27529026962FE3003AB368 /* DetailsViewController.m */; };
 		AA2752942696555B003AB368 /* InfiniteScrollActivityView.m in Sources */ = {isa = PBXBuildFile; fileRef = AA2752932696555B003AB368 /* InfiniteScrollActivityView.m */; };
+		AA27529726966556003AB368 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA27529626966556003AB368 /* ProfileViewController.m */; };
+		AA27529F269786E0003AB368 /* profileCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AA27529E269786E0003AB368 /* profileCell.m */; };
 		AA2E85A12694E79D00EE0581 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AA2E85A02694E79D00EE0581 /* AppDelegate.m */; };
 		AA2E85A42694E79D00EE0581 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AA2E85A32694E79D00EE0581 /* SceneDelegate.m */; };
 		AA2E85A72694E79D00EE0581 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA2E85A62694E79D00EE0581 /* ViewController.m */; };
@@ -55,6 +57,10 @@
 		AA27529026962FE3003AB368 /* DetailsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailsViewController.m; sourceTree = "<group>"; };
 		AA2752922696555B003AB368 /* InfiniteScrollActivityView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InfiniteScrollActivityView.h; sourceTree = "<group>"; };
 		AA2752932696555B003AB368 /* InfiniteScrollActivityView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InfiniteScrollActivityView.m; sourceTree = "<group>"; };
+		AA27529526966556003AB368 /* ProfileViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
+		AA27529626966556003AB368 /* ProfileViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
+		AA27529D269786E0003AB368 /* profileCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = profileCell.h; sourceTree = "<group>"; };
+		AA27529E269786E0003AB368 /* profileCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = profileCell.m; sourceTree = "<group>"; };
 		AA2E859C2694E79D00EE0581 /* instagramapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = instagramapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA2E859F2694E79D00EE0581 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		AA2E85A02694E79D00EE0581 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -212,6 +218,8 @@
 				AA2E85DC2694FFB200EE0581 /* ComposeViewController.m */,
 				AA27528F26962FE3003AB368 /* DetailsViewController.h */,
 				AA27529026962FE3003AB368 /* DetailsViewController.m */,
+				AA27529526966556003AB368 /* ProfileViewController.h */,
+				AA27529626966556003AB368 /* ProfileViewController.m */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -232,6 +240,8 @@
 				AA2E85E42695236500EE0581 /* igCell.m */,
 				AA2752922696555B003AB368 /* InfiniteScrollActivityView.h */,
 				AA2752932696555B003AB368 /* InfiniteScrollActivityView.m */,
+				AA27529D269786E0003AB368 /* profileCell.h */,
+				AA27529E269786E0003AB368 /* profileCell.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -475,6 +485,7 @@
 			files = (
 				AA2E85A72694E79D00EE0581 /* ViewController.m in Sources */,
 				AA27529126962FE3003AB368 /* DetailsViewController.m in Sources */,
+				AA27529F269786E0003AB368 /* profileCell.m in Sources */,
 				AA2E85A12694E79D00EE0581 /* AppDelegate.m in Sources */,
 				AA2E85B22694E79E00EE0581 /* main.m in Sources */,
 				AA2E85A42694E79D00EE0581 /* SceneDelegate.m in Sources */,
@@ -483,6 +494,7 @@
 				AA2E85D72694F0F200EE0581 /* LoginViewController.m in Sources */,
 				AA2752942696555B003AB368 /* InfiniteScrollActivityView.m in Sources */,
 				AA2E85E52695236500EE0581 /* igCell.m in Sources */,
+				AA27529726966556003AB368 /* ProfileViewController.m in Sources */,
 				AA2E85E12695077500EE0581 /* Post.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
