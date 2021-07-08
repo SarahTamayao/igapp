@@ -46,7 +46,6 @@
     self.refreshControl = [[UIRefreshControl alloc] init];
     [self.refreshControl addTarget:self action:@selector(fetchPosts) forControlEvents:UIControlEventValueChanged];
     [self.collectionView insertSubview: self.refreshControl atIndex:0];
-    // Do any additional setup after loading the view.
 }
 - (void) getUser{
     if (self.author == nil){
@@ -106,7 +105,6 @@
     PFQuery *query = [PFUser query];
 
     // Retrieve the object by id
-    NSLog(objectID);
     [query getObjectInBackgroundWithId:objectID
                                  block:^(PFObject *user, NSError *error) {
         // Now let's update it with some new data. In this case, only cheatMode and score

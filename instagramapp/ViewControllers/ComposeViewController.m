@@ -25,8 +25,6 @@
     UITapGestureRecognizer *photoTapGestureRecognizer = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(didTapPhoto:)];
     [self.postImage addGestureRecognizer:photoTapGestureRecognizer];
     [self.postImage setUserInteractionEnabled:YES];
-    
-    // Do any additional setup after loading the view.
 }
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info {
     

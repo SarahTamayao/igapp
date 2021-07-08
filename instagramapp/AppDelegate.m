@@ -19,8 +19,8 @@
     // Override point for customization after application launch.
     ParseClientConfiguration *config = [ParseClientConfiguration  configurationWithBlock:^(id<ParseMutableClientConfiguration> configuration) {
 
-            configuration.applicationId = @"PUH42mdLaVJngfK3sqQie3HJQSZKnskk7yAZzvxR"; // <- UPDATE
-            configuration.clientKey = @"8v8ep5JlxQ3pRuEe6BCZDwAW56LI4h64KYPUGMP0"; // <- UPDATE
+            configuration.applicationId = @"PUH42mdLaVJngfK3sqQie3HJQSZKnskk7yAZzvxR";
+            configuration.clientKey = @"8v8ep5JlxQ3pRuEe6BCZDwAW56LI4h64KYPUGMP0";
             configuration.server = @"https://parseapi.back4app.com";
         }];
 
