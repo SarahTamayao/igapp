@@ -43,18 +43,20 @@
         if(favorited){
             [self.post.likes removeObject:[PFUser currentUser][@"username"]];
             [self.likeButton setImage:[UIImage imageNamed:@"like-button.png"] forState:UIControlStateNormal];
+            self.post.likeCount = [NSNumber numberWithInt:([self.post.likeCount intValue]-1)];
             [self updatelikes];
         }
         else{
             [self.post.likes addObject:[PFUser currentUser][@"username"]];
             [self.likeButton setImage:[UIImage imageNamed:@"like-button-red.png"] forState:UIControlStateNormal];
+            self.post.likeCount = [NSNumber numberWithInt:([self.post.likeCount intValue]+1)];
             [self updatelikes];
         }
     }
     else{
         self.post.likes = [[NSMutableArray alloc] initWithObjects:[PFUser currentUser].username, nil];
         [self.likeButton setImage:[UIImage imageNamed:@"like-button-red.png"] forState:UIControlStateNormal];
-        NSLog(@"%@",self.post.likes);
+        self.post.likeCount = @(1);
         [self updatelikes];
     }
 }
@@ -67,6 +69,7 @@
         if(error==nil){
             NSLog(@"success");
             post[@"likes"] = [[NSArray alloc] initWithArray:self.post.likes];
+            post[@"likeCount"] = self.post.likeCount;
             [post saveInBackground];
         }
         else{
@@ -74,6 +77,9 @@
         }
     }];
 
+}
+- (IBAction)didCommentAction:(UIButton *)sender {
+    [self.delegate igCell:self didComment:self.post];
 }
 
 @end

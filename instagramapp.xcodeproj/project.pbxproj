@@ -29,6 +29,8 @@
 		AA2E85E12695077500EE0581 /* Post.m in Sources */ = {isa = PBXBuildFile; fileRef = AA2E85E02695077500EE0581 /* Post.m */; };
 		AA2E85E52695236500EE0581 /* igCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AA2E85E42695236500EE0581 /* igCell.m */; };
 		AAF98FE52698F58E00DFA41C /* CommentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AAF98FE42698F58E00DFA41C /* CommentViewController.m */; };
+		AAF98FE82698F5DE00DFA41C /* commentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AAF98FE72698F5DE00DFA41C /* commentCell.m */; };
+		AAF98FEB2698F82900DFA41C /* Comment.m in Sources */ = {isa = PBXBuildFile; fileRef = AAF98FEA2698F82900DFA41C /* Comment.m */; };
 		B8418D8F6EDD2889956551DB /* Pods_instagramapp_instagramappUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3F6628F4DA0330674938BCA /* Pods_instagramapp_instagramappUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -95,6 +97,10 @@
 		AA2E85E42695236500EE0581 /* igCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = igCell.m; sourceTree = "<group>"; };
 		AAF98FE32698F58E00DFA41C /* CommentViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommentViewController.h; sourceTree = "<group>"; };
 		AAF98FE42698F58E00DFA41C /* CommentViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CommentViewController.m; sourceTree = "<group>"; };
+		AAF98FE62698F5DE00DFA41C /* commentCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = commentCell.h; sourceTree = "<group>"; };
+		AAF98FE72698F5DE00DFA41C /* commentCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = commentCell.m; sourceTree = "<group>"; };
+		AAF98FE92698F82900DFA41C /* Comment.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Comment.h; sourceTree = "<group>"; };
+		AAF98FEA2698F82900DFA41C /* Comment.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Comment.m; sourceTree = "<group>"; };
 		B3F6628F4DA0330674938BCA /* Pods_instagramapp_instagramappUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_instagramapp_instagramappUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5430FB9552AE27C3660DB69 /* Pods-instagramapp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-instagramapp.debug.xcconfig"; path = "Target Support Files/Pods-instagramapp/Pods-instagramapp.debug.xcconfig"; sourceTree = "<group>"; };
 		C45BEE7B814DB3B40AC9BFC6 /* Pods-instagramappTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-instagramappTests.debug.xcconfig"; path = "Target Support Files/Pods-instagramappTests/Pods-instagramappTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -247,6 +253,8 @@
 			children = (
 				AA2E85DF2695077500EE0581 /* Post.h */,
 				AA2E85E02695077500EE0581 /* Post.m */,
+				AAF98FE92698F82900DFA41C /* Comment.h */,
+				AAF98FEA2698F82900DFA41C /* Comment.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -260,6 +268,8 @@
 				AA2752932696555B003AB368 /* InfiniteScrollActivityView.m */,
 				AA27529D269786E0003AB368 /* profileCell.h */,
 				AA27529E269786E0003AB368 /* profileCell.m */,
+				AAF98FE62698F5DE00DFA41C /* commentCell.h */,
+				AAF98FE72698F5DE00DFA41C /* commentCell.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -505,6 +515,7 @@
 				AA27529126962FE3003AB368 /* DetailsViewController.m in Sources */,
 				AA2752A42697BDF2003AB368 /* CustomTapRecognizer.m in Sources */,
 				AA27529F269786E0003AB368 /* profileCell.m in Sources */,
+				AAF98FEB2698F82900DFA41C /* Comment.m in Sources */,
 				AA2E85A12694E79D00EE0581 /* AppDelegate.m in Sources */,
 				AA2E85B22694E79E00EE0581 /* main.m in Sources */,
 				AA2E85A42694E79D00EE0581 /* SceneDelegate.m in Sources */,
@@ -512,6 +523,7 @@
 				AA2E85DA2694F48200EE0581 /* FeedViewController.m in Sources */,
 				AAF98FE52698F58E00DFA41C /* CommentViewController.m in Sources */,
 				AA2E85D72694F0F200EE0581 /* LoginViewController.m in Sources */,
+				AAF98FE82698F5DE00DFA41C /* commentCell.m in Sources */,
 				AA2752942696555B003AB368 /* InfiniteScrollActivityView.m in Sources */,
 				AA2E85E52695236500EE0581 /* igCell.m in Sources */,
 				AA27529726966556003AB368 /* ProfileViewController.m in Sources */,

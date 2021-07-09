@@ -13,18 +13,18 @@
 NS_ASSUME_NONNULL_BEGIN
 @protocol igCellDelegate;
 @interface igCell : UITableViewCell
-//@property (weak, nonatomic) IBOutlet UIImageView *postImage;
 @property (weak, nonatomic) IBOutlet UILabel *postCaption;
 @property (weak, nonatomic) IBOutlet PFImageView *postImageViw;
 @property (weak, nonatomic) IBOutlet UILabel *postTime;
 @property (nonatomic, strong) Post *post;
 @property (weak, nonatomic) IBOutlet UIButton *likeButton;
-@property (weak, nonatomic) IBOutlet UIButton *replyButton;
+//@property (weak, nonatomic) IBOutlet UIButton *replyButton;
+@property (nonatomic, weak) id<igCellDelegate> delegate;
 
 @end
 
 @protocol igCellDelegate
-//- (void)igCell:(igCell *) igCell didComment: (Comment *)comment;
+- (void)igCell:(igCell *)igCell didComment:(Post *)post;
 @end
 
 NS_ASSUME_NONNULL_END

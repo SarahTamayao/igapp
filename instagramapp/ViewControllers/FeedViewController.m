@@ -15,8 +15,9 @@
 #import "CustomTapRecognizer.h"
 #import "ProfileViewController.h"
 #import "ComposeViewController.h"
+#import "CommentViewController.h"
 
-@interface FeedViewController () <UITableViewDataSource, UITableViewDelegate, UIScrollViewDelegate>
+@interface FeedViewController () <UITableViewDataSource, UITableViewDelegate, UIScrollViewDelegate, igCellDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic, strong) NSArray *postArray;
 @property (nonatomic, strong) UIRefreshControl *refreshControl;
@@ -108,6 +109,7 @@
 }
 - (UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     igCell *cell = (igCell *) [tableView dequeueReusableCellWithIdentifier:@"igCell" forIndexPath:indexPath];
+    cell.delegate = self;
     cell.post = (Post *)self.postArray[indexPath.section];
     [cell setPost:cell.post];
     return cell;
@@ -182,6 +184,10 @@
 
     }
 }
+- (void)igCell:(igCell *)igCell didComment:(Post *)post{
+    // TODO: Perform segue to profile view controller
+   [self performSegueWithIdentifier:@"commentSegue" sender:post];
+}
 
 #pragma mark - Navigation
 
@@ -200,6 +206,11 @@
         PFUser *ar = sender;
         ProfileViewController *profileViewController = [segue destinationViewController];
         profileViewController.author = ar;
+    }
+    else if([[segue identifier] isEqualToString:@"commentSegue"]){
+        Post *post = sender;
+        CommentViewController *commentViewController = [segue destinationViewController];
+        commentViewController.post = post;
     }
 }
 
