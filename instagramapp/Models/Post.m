@@ -10,6 +10,7 @@
 
 
 @implementation Post
+@dynamic objectId;
 @dynamic postID;
 @dynamic userID;
 @dynamic author;
@@ -18,6 +19,7 @@
 @dynamic likeCount;
 @dynamic commentCount;
 @dynamic createdAt;
+@dynamic likes;
 
 
 
@@ -36,6 +38,7 @@
     newPost.likeCount = @(0);
     newPost.commentCount = @(0);
     newPost.createdAt = [NSDate date];
+    newPost.likes =[[NSMutableArray alloc] init];
     
     [newPost saveInBackgroundWithBlock: completion];
     

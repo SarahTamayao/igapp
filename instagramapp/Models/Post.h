@@ -10,6 +10,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface Post : PFObject <PFSubclassing>
+@property (nonatomic, strong) NSString *objectId;
 @property (nonatomic, strong) NSString *postID;
 @property (nonatomic, strong) NSString *userID;
 @property (nonatomic, strong) PFUser *author;
@@ -19,6 +20,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) NSNumber *likeCount;
 @property (nonatomic, strong) NSNumber *commentCount;
 @property (nonatomic, strong) NSDate *createdAt;
+@property (nonatomic, strong) NSMutableArray *likes;
 
 + (void) postUserImage: ( UIImage * _Nullable )image withCaption: ( NSString * _Nullable )caption withCompletion: (PFBooleanResultBlock  _Nullable)completion;
 @end

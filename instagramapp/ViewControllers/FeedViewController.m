@@ -122,7 +122,7 @@
 }
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     UIView *headerView = [[UIView alloc] init];
-    UIImage *myImage = [UIImage imageNamed:@"image_placeholder.png"];
+    UIImage *myImage = [UIImage imageNamed:@"blank-profile.png"];
     UIImageView *imageView = [[UIImageView alloc] initWithImage:myImage];
     
     PFFileObject *userImageFile = self.postArray[section][@"author"][@"profilePic"];
