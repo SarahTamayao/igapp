@@ -35,6 +35,7 @@
     else{
         [self.likeButton setImage:[UIImage imageNamed:@"like-button.png"] forState:UIControlStateNormal];
     }
+    self.usernameLabel.text = post.author.username;
     [self.postImageViw loadInBackground];
 }
 - (IBAction)likeAction:(id)sender {

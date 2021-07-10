@@ -2,7 +2,7 @@
 
 **Finsta** is a photo sharing app using Parse as its backend.
 
-Time spent: **X** hours spent in total
+Time spent: **13** hours spent in total
 
 ## User Stories
 
@@ -30,7 +30,7 @@ The following **optional** features are implemented:
 - [x] User can comment on a post and see all comments for each post in the post details screen.
 - [x] User can like a post and see number of likes for each post in the post details screen.
 - [x] Style the login page to look like the real Instagram login page.
-- [ ] Style the feed to look like the real Instagram feed.
+- [x] Style the feed to look like the real Instagram feed.
 - [ ] Implement a custom camera view.
 
 The following **additional** features are implemented:
@@ -39,8 +39,8 @@ The following **additional** features are implemented:
 
 Please list two areas of the assignment you'd like to **discuss further with your peers** during the next class (examples include better ways to implement something, how to extend your app in certain ways, etc):
 
-1.
-2.
+1. Better implement the comment view- have the uitextview slide up when the keyboard appears
+2. Make it seem more like instagram - dming
 
 ## Video Walkthrough
 
@@ -60,10 +60,11 @@ List an 3rd party libraries, icons, graphics, or other assets you used in your a
 ## Notes
 
 Describe any challenges encountered while building the app.
+Working with the database for the first time
 
 ## License
 
-    Copyright [yyyy] [name of copyright owner]
+    Copyright [2021] [Laura Yao]
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.

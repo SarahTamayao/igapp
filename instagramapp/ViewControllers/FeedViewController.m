@@ -45,6 +45,10 @@
     insets.bottom += InfiniteScrollActivityView.defaultHeight;
     self.tableView.contentInset = insets;
     [self.tableView registerClass:[UITableViewHeaderFooterView class] forHeaderFooterViewReuseIdentifier:@"postHeader"];
+    
+    self.navigationItem.title = @"Instagram";
+    UINavigationBar *navigationBar = self.navigationController.navigationBar;
+    navigationBar.titleTextAttributes = @{NSFontAttributeName : [UIFont fontWithName:@"SavoyeLetPlain" size:40], NSForegroundColorAttributeName : [UIColor blackColor]};
 }
 - (void)fetchPosts{
     // construct query

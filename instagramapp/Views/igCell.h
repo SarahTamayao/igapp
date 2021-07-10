@@ -18,7 +18,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UILabel *postTime;
 @property (nonatomic, strong) Post *post;
 @property (weak, nonatomic) IBOutlet UIButton *likeButton;
-//@property (weak, nonatomic) IBOutlet UIButton *replyButton;
+@property (weak, nonatomic) IBOutlet UILabel *usernameLabel;
 @property (nonatomic, weak) id<igCellDelegate> delegate;
 
 @end
