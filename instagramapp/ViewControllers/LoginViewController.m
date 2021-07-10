@@ -11,6 +11,7 @@
 @interface LoginViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *username;
 @property (weak, nonatomic) IBOutlet UITextField *password;
+@property (weak, nonatomic) IBOutlet UIView *gradView;
 
 @end
 
@@ -18,6 +19,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    CAGradientLayer *gradient = [CAGradientLayer layer];
+    gradient.frame = self.gradView.bounds;
+    gradient.startPoint = CGPointZero;
+    gradient.endPoint = CGPointMake(1, 1);
+    gradient.colors = [NSArray arrayWithObjects:(id)[[UIColor colorWithRed:145/255.0 green:72.0/255.0 blue:203/255.0 alpha:1.0] CGColor],(id)[[UIColor colorWithRed:237/255.0 green:20.0/255.0 blue:30/255.0 alpha:1.0] CGColor], nil];
+
+    [self.gradView.layer insertSublayer:gradient atIndex:0];
     // Do any additional setup after loading the view.
 }
 - (IBAction)signupAction:(id)sender {
