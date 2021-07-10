@@ -49,6 +49,7 @@ Here's a walkthrough of implemented user stories:
 <img src='https://github.com/gss223/igapp/blob/main/gif1.gif' width='' alt='Video Walkthrough1' />
 <img src='https://github.com/gss223/igapp/blob/main/gif2.gif' width='' alt='Video Walkthrough2' />
 <img src='https://github.com/gss223/igapp/blob/main/gif3.gif' width='' alt='Video Walkthrough3' />
+<img src='https://github.com/gss223/igapp/blob/main/gif5.gif' width='' alt='Video Walkthrough5' />
 <img src='https://github.com/gss223/igapp/blob/main/gif4.gif' width='' alt='Video Walkthrough4' />
 
 GIF created with [Kap](https://getkap.co/).

@@ -107,8 +107,6 @@
     // Retrieve the object by id
     [query getObjectInBackgroundWithId:objectID
                                  block:^(PFObject *user, NSError *error) {
-        // Now let's update it with some new data. In this case, only cheatMode and score
-        // will get sent to the cloud. playerName hasn't changed.
         if(error==nil){
             user[@"profilePic"] = image;
             NSLog(@"success");
