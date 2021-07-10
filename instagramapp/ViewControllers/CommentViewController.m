@@ -55,6 +55,8 @@
         if(error==nil){
             NSLog(@"success");
             self.commentField.text = @"";
+            self.post.commentCount =[NSNumber numberWithInt:([self.post.commentCount intValue]+1)];
+            [self updateCommentCount];
             [self fetchComments];
         }
         else{
@@ -79,7 +81,7 @@
                                  block:^(PFObject *post, NSError *error) {
         if(error==nil){
             NSLog(@"success");
-            post[@"commentCount"] = [NSNumber numberWithInt:([self.post.commentCount intValue]+1)];
+            post[@"commentCount"] = self.post.commentCount;
             [post saveInBackground];
         }
         else{
