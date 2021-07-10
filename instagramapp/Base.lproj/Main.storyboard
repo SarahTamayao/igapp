@@ -456,6 +456,7 @@
                         <outlet property="profilePic" destination="u0S-pP-TM6" id="aDP-G1-PWB"/>
                         <outlet property="timeStamp" destination="GQm-rv-iYp" id="Zkp-d3-YoN"/>
                         <outlet property="username" destination="ZEy-13-fos" id="f3w-Rr-Shv"/>
+                        <outlet property="username2" destination="rhX-5l-QGX" id="TwL-x0-nPt"/>
                         <segue destination="6Z6-ep-juU" kind="show" identifier="showComment" id="HwQ-kX-cg9"/>
                     </connections>
                 </viewController>
@@ -679,7 +680,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Djr-wE-Z3L"/>
+        <segue reference="HwQ-kX-cg9"/>
         <segue reference="LV8-Q6-doo"/>
         <segue reference="TXx-FO-5TO"/>
     </inferredMetricsTieBreakers>

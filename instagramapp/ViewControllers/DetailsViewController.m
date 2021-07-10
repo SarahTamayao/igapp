@@ -11,6 +11,7 @@
 @import Parse;
 
 @interface DetailsViewController ()
+@property (weak, nonatomic) IBOutlet UILabel *username2;
 @property (weak, nonatomic) IBOutlet PFImageView *postView;
 @property (weak, nonatomic) IBOutlet UILabel *username;
 @property (weak, nonatomic) IBOutlet UILabel *caption;
@@ -32,6 +33,7 @@
 - (void) setUpView{
     self.caption.text = self.post[@"caption"];
     self.username.text = self.post[@"author"][@"username"];
+    self.username2.text = self.post[@"author"][@"username"];
     self.postView.file = self.post[@"image"];
     NSDate *date = self.post.createdAt;
     NSString *timePost = date.timeAgoSinceNow;
